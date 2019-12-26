@@ -89,7 +89,7 @@ You should display the following message on the console: *"server on port 3000"*
 #### Congratulations, you already have the api running on your machine!
 
 ## Routes ⌨️
-
+### GET
 Place the following route in the browser to get all the famous people
 ```
 localhost:3000/api/famous_people
@@ -101,26 +101,55 @@ _Place the limit number of famous people you want to get:_
 localhost:3000/api/famous_people/10
 ```
 **By sex**
-Options: male | female
+_Options: male | female_
 ```
 localhost:3000/api/famous_people/sex/female
 ```
 **By profession** 
-Options: actors | athletes | singers | scientists | businessmen
+_Options: actors | athletes | singers | scientists | businessmen_
 ```
 localhost:3000/api/famous_people/profession/actors
 ```
 **By name**
-_Famous person finder by name, place the name (in upper and lower case) or any letter containing the name and return all that match._
+_Famous person finder by name, place the name or any letter containing the name and return all that match._
 ```
-localhost:3000/api/famous_people/name/C
+localhost:3000/api/famous_people/name/c
 ```
-_returns all famous people in their names that contain uppercase C._
+_returns all famous people in their names that contain the letter c._
+
+### POST 
+
+**Save**
+_To save a new famous person._
+```
+localhost:3000/api/save
+```
+
+**Upload Image**
+_To save a new image of a famous person, the parameter **id** indicates the id of the famous person_
+```
+localhost:3000/api/upload-image/:id
+```
+
+### PUT
+**update**
+_Update the information of a famous person_
+```
+localhost:3000/api/famous_people/:id
+```
+
+### DELETE
+**Delete**
+_Delete a famous person_
+```
+localhost:3000/api/famous_people/:id
+```
 
 ## Built with 🛠️
 
 * [Express](https://expressjs.com/es/) - The framework used
 * [npm](https://www.npmjs.com) - Dependency Manager
+* [MongoDB](https://www.mongodb.com/es) - Database Manager
 
 ## Author ✒️
 
