@@ -48,6 +48,3 @@
 {"_id":{"$oid":"5dfabb8fce1d3e1b44cd2ed7"},"first_name":"Timothy","last_name":"Cook","year_of_birth":"01-11-1960","sex":"male","profession":"businessman","img":"tim_cook.jpg"}
 {"_id":{"$oid":"5dfabb8fce1d3e1b44cd2ed8"},"first_name":"Donatella","last_name":"Versace","year_of_birth":"02-04-1955","sex":"female","profession":"businesswoman","img":"donatella_versace.jpg"}
 {"_id":{"$oid":"5dfabb8fce1d3e1b44cd2ed9"},"first_name":"Miley","last_name":"Cyrus","year_of_birth":"23-11-1992","sex":"female","profession":"singer","img":"miley_cyrus.jpg"}
-{"_id":{"$oid":"5dfc3ef333d0dd14447381f0"},"first_name":"Camila","last_name":"Paradas","year_of_birth":"06-02-2001","sex":"female","profession":"make up artist","img":null,"__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5dfd89586ef1a1220c6f6e5c"},"first_name":"Ambar","last_name":"Alchaer","year_of_birth":"26-07-2000","sex":"female","profession":"model","img":null,"__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5dfd8aed6ef1a1220c6f6e5d"},"first_name":"Nayarith","last_name":"Skrut","year_of_birth":"26-07-2000","sex":"female","profession":"model","img":"BtydYWBZz_uMiUEue6vCUj_E.jpg","__v":{"$numberInt":"0"}}
