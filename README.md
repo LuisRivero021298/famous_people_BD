@@ -20,6 +20,9 @@ show.dbs;
 ```
 Show the default databases (admin, config, local).
 
+#### Compass
+Compass is a tool to manage database in MongoDB, it also allows us to export and import collections very easily, to download: https://docs.mongodb.com/compass/master/install/
+
 #### Node.js
 The second thing you should do is install nodejs, the following link will tell you how to do it: https://nodejs.org/en/download/
 
@@ -48,7 +51,7 @@ If everything went well it will show us the message “Node is installed correct
 
 #### You must clone the project:
 ```
-git clone https://github.com/LuisRivero021298/famous_people.git
+git clone https://github.com/LuisRivero021298/famous_people_BD.git
 ```
 #### _Within the project you must execute the following commands:_
 
@@ -57,11 +60,27 @@ _You can read more about express in the following link: https://expressjs.com/gu
 ```
 npm i express morgan --save
 ```
-**-2** Then you must install nodemon (this module restarts the server for us and the changes will be shown without the need to close and open the server)
+**-2** Now we are going to install connect-multiparty a library that allows us to upload files.
+```
+npm i connect-multiparty --save
+```
+**-3** We will install mongoose which is an ORM to use with MongoDB.
+```
+npm i mongoose --save
+```
+**-4** We will install validator, library that allows us to make validations from the back end.
+```
+npm i validator --save
+```
+**-5** Then you must install nodemon (this module restarts the server for us and the changes will be shown without the need to close and open the server)
 ```
 npm i nodemon -D
 ```
-**-3** To prove that the server works correctly, we will execute the following command in the console:
+**-6** After installing all the necessary modules, we open MongoDB Compass (we must have run mongod.exe), click on the CREATE DATABASE button, and create the famous_people BD and collection famouspeoples.
+
+**-7** We select the famouspeoples collection and at the top we click on the Collection option, select the Import Data option, a pop-up window will appear, select the Browse button, select the famous_people.json file that is inside the project and you already have the collection in your database give data.
+
+**-8** To prove that the server works correctly, we will execute the following command in the console:
 ```
 npm run dev
 ```
