@@ -9,6 +9,7 @@ const app = express();
 
 //load routes
 const routeFP = require('./routes/famous_people');
+const routeConf = require('./routes/routes');
 
 //load middelwares
 app.use(morgan('dev'));
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 
 //add prefixes to routes
 app.use('/api', routeFP);
+app.use('/api', routeConf);
 
 //export module 
 module.exports = app;

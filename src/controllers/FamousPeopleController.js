@@ -26,7 +26,7 @@ var selectProfession = (profession) => { //Select the profession
 			break;
 	}	
 }; //end selectProfession
-var responseJson = (res,status, message, array) => { // Server response
+var responseJson = (res,status, message, data) => { // Server response
 	if(status != 200){
 		return res.status(status).json({
 			status: 'error',
@@ -34,16 +34,15 @@ var responseJson = (res,status, message, array) => { // Server response
 		});	
 	}
 	return res.status(status).json({
-		status: 'success',
-		message: message, 
-		array
+        status: 'success',
+		data
 	});
 };//end responseJson
 
 const Controller = {
 	save: (req, res) => {
 		let body = req.body;
-		
+		console.log(body);
 		try {
 			var validateAll = {
 				validateFirst: !validator.isEmpty(body.first_name),
@@ -94,9 +93,11 @@ const Controller = {
 
         //get file name and extension
         filePath = req.files.file0.path;
-        fileSplit = filePath.split('\\');    
+        fileSplit = filePath.split('/');
+        console.log('HOLAAAAAAAAAAAAAAAAAA', fileSplit);    
         fileName = fileSplit[3];
         fileExt = fileName.split('\.')[1];
+        
         
         //check extension
         if (fileExt != 'png' && fileExt != 'jpg' && fileExt != 'jpeg' && fileExt != 'gif') {
@@ -125,6 +126,7 @@ const Controller = {
 	update: (req, res) => {
         let famousId = req.params.id;
         let data = req.body;
+        console.log(data);
 
         try {
         	var validateAll = {
@@ -169,7 +171,21 @@ const Controller = {
             
             return  responseJson(res, 200, 'Famous found', famouspeoples);
         });
-	}, //end getFamousPeople
+    }, //end getFamousPeople
+    getFamousPeopleById: (req, res) => {
+        let id = req.params.id;
+
+        if(!id || id == null){
+            return  responseJson(res, 404, 'Specify the famous');
+        }
+
+        FamousPeople.findById(id, (err, famousDetail) => {
+            if(err || !famousDetail){
+                return  responseJson(res, 500, 'Famous does not exist');
+            }
+            return  responseJson(res, 200, '',famousDetail);
+        });
+    },
 	getFamousPeopleByProfession: (req, res) => {
 		let profession = req.params.profession;
 		let famousPeopleByProfession = [];
